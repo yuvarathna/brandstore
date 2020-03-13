@@ -25,7 +25,7 @@ SECRET_KEY = '30b-xmcq#$b^3bh1n^_r1!y1-xop=awzb%cthh&w_j4c3ky-u('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['yuvabrandstore.herokuapp.com']
 
 
 # Application definition
@@ -46,6 +46,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -130,7 +132,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 #Auth
 AUTHENTICATION_BACKENDS = (

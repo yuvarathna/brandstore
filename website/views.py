@@ -10,6 +10,7 @@ from django .contrib import messages
 class HomeView(ListView):
    model = Item
    template_name = "core/home.html"
+   
 
 def checkout(request):
    return render (request, "core/checkout.html")

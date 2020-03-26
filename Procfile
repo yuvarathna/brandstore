@@ -1,2 +1,2 @@
-web: gunicorn website.wsgi --log-file -
+web: gunicorn brandstore.wsgi --log-file -
 

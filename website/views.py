@@ -22,6 +22,7 @@ def products(request):
     }
    return render (request, "core/products.html",context)
 
+
 class ItemDetailView(DetailView):
    model = Item
    template_name = "core/product.html"

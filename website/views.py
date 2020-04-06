@@ -29,7 +29,7 @@ class ItemDetailView(DetailView):
 
 
 
-#login_required
+@login_required
 def add_to_cart(request, slug):
     item = get_object_or_404(Item, slug=slug)
     order_item, created = OrderItem.objects.get_or_create(
@@ -49,14 +49,13 @@ def add_to_cart(request, slug):
         else:
             order.items.add(order_item)
             messages.info(request, "This item was added to your cart.")
-            return redirect("website:product",slug=slug)
+            return redirect("website:order-summary")
     else:
         ordered_date = timezone.now()
-        order = Order.objects.create(
-        user=request.user, ordered_date=ordered_date)
+        order = Order.objects.create(user=request.user, ordered_date=ordered_date)
         order.items.add(order_item)
         messages.info(request, "This item was added to your cart.")
-        return redirect("website:product",slug=slug)
+        return redirect("website:order-summary")
 
 
 #login_required

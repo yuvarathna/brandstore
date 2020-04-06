@@ -77,13 +77,13 @@ WSGI_APPLICATION = 'brandstore.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd3cfg49013s7d5',
-        'USER': 'rzmjpxpworgeed',
-        'PASSWORD':'b65eff9a1f56a4f0533c21923a80e9c45261f9e5edfb9f254c6028e64904bc2c',
-        'HOST': "ec2-52-23-14-156.compute-1.amazonaws.com",
-        'PORT': '5432'
-    }
+'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': ''
+    }'
 }
 
 

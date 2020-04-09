@@ -30,7 +30,7 @@ class ItemDetailView(DetailView):
 
 
 
-#login_required
+@login_required
 def add_to_cart(request, slug):
     item = get_object_or_404(Item, slug=slug)
     order_item,created = OrderItem.objects.get_or_create(
@@ -59,7 +59,7 @@ def add_to_cart(request, slug):
         return redirect("website:order-summary")
 
 
-#login_required
+@login_required
 def remove_from_cart(request, slug):
     item = get_object_or_404(Item, slug=slug)
     order_qs = Order.objects.filter(

@@ -138,6 +138,7 @@ AUTHENTICATION_BACKENDS = (
 
 
 SITE_ID = 1
+LOGIN_URL = '/'
 LOGIN_REDIRECT_URL = '/'
 #crispy froms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

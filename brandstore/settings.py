@@ -19,7 +19,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 
-ALLOWED_HOSTS = ['yuvabrandstore.herokuapp.com']
+ALLOWED_HOSTS = ['yuvabrandstore.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -139,5 +139,6 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
+
 #crispy froms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
